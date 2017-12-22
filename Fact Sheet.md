@@ -1,0 +1,31 @@
+## What is GIFwrapped?
+If you consider yourself a GIF connoisseur, you've probably accumulated a go-to collection of images for sending to friends and enemies alike. _GIFwrapped_ is an app for iOS that provides an easy way to collect, store and share GIFs on iOS, built just for people who take GIFs as seriously as they do their photo collection.
+
+TL;DR: _GIFwrapped_ is the app for building your own collection of GIFs and sharing them, right from your iPhone or iPad.
+
+## Key Features
+- Collect GIFs in your own custom library, and sync them between devices with Dropbox.
+- Quickly share GIFs using the built-in Messages app.
+- Search for GIFs using search powered by GIPHY, or download GIFs from a website with just the URL.
+- Share and save GIFs with your iCloud Photo Library.
+- Save GIFs from Twitter with the share extension.
+
+## Fact Sheet
+
+### Developer
+Daniel "Jelly" Farrelly
+
+### Release Date
+4 February 2014
+
+### Platform
+iOS 9 or later, universal app for iPhone and iPad. Includes iMessage App, available on iOS 10 or later.
+
+### Cost
+Free with In-app Purchases.
+
+## Links
+Website: <https://gifwrapped.co>  
+App Store: <https://itunes.apple.com/au/app/gifwrapped/id782319880?mt=8>  
+User Guide: <https://gifwrapped.co/faq>  
+Twitter: <https://twitter.com/gifwrapped>  
