@@ -1,29 +1,37 @@
-Hi there, and welcome back to another episode of "GIFwrapped Bug Fixes and Performance Improvements: Have Things Been Fixed? Have They Fixed The Things I Specifically Have Issues With??? Let's Find Out!" with your host… me!
+There's a lot going on with GIFwrapped, and this release is no exception. I've started making big strides towards a new, hugely-improved UI, but while there's still a bit to go on that, I wanted to introduce a couple of new things for y'all to enjoy in the meantime!
 
-Last time, we fixed a bunch of issues and made performance improvements, but I know what you're wondering. You're thinking, "Have more things been fixed? Have they fixed the things I specifically have issues with?"
+= GIFWRAPPED PREMIUM =
 
-Well… let's find out!
+The largest and most important change is the introduction of GIFwrapped Premium: an auto-renewing subscription that will remove the ads and unlock extra features. By subscribing, you're also supporting GIFwrapped's ongoing development.
 
-- Fixing one issue in the preview screen uncovered a crasher (though not soon enough for me to ship), caused by an observer sticking around after the image metadata it was watching was gone. It might sound complicated, but it was just a matter of enforcing an order to events, so now the screen can be dismissed just fine.
+- GIFwrapped Premium replaces the mess of upgrades that were previously available, but if you already purchased one of those, you will continue to get the features you unlocked, exactly the same as before.
 
-- Added an extra layer to the Dropbox warning system to suppress the alert when the app isn't actually in the foreground. I think this might have finally stopped it from showing up unnecessarily, it's kinda hard to tell. Keep an eye on it, and if it even so much as twitches… beat the dang thing with a stick.
+- This subscription gets charged to your iTunes account, and costs USD $3.49 per year (at the exact moment this sentence was written). It's renewed automatically—because that is the nature of an auto-renewing subscription—but don't fret: you can turn off auto-renewal at any time, and I'll still like you for who you are on the inside, even if I'm not getting paid.
 
-- Updated the text for an alert that I added several versions back, but had never actually wrote proper copy for. I'm not super sure it'll even get shown at any point (it's a pretty obscure problem), but the fact that I've finally fixed it should alleviate those stress dreams I know y'all were having.
+- More information about GIFwrapped Premium is available in the User Guide, which can be found in the Settings tab, or online from gifwrapped.co/faq/gifwrapped-premium
 
-- There was apparently some kind of outlined consume happening within the code, causing crashes left, right and centre. If you have no idea what an "outlined consume" is, that's OK. Neither do I! I really just kinda stabbed around in the dark until I felt like I hit something. Which means there's either no more bug, or a really angry, partially-stabbed bear hanging out in here. PLEASE LET IT BE THE FIRST ONE
+= BURSTS AND LIVE PHOTOS =
 
-- If the library had to remove all its items—which doesn't happen often—the instructions given to the UI could end up being wrong, causing it to get out of sync with the actual data and everything would go slowly downhill from there. I solved it though, so it's pretty much a non-issue now ¯\_(ツ)_/¯
+This update also introduces something that's been in pre-release for a while, but which is now available to everyone: support for Bursts and Live Photos from your photo library! Quickly grab a GIF version of photos you take, and send 'em to friends. Great for realising you accidentally left live photo mode on when taking a picture of that cabinet in IKEA.
 
-- On occasion, an image might not have a thumbnail available, and if the planets align on the night of the solstice, when a full moon is visible from the well of Ashur… it could cause the thumbnail not to load at all. I've added a fallback so it goes for the actual download just in case, and the world is safe once more.
+- Different image sources are grouped together to make things a little easier to manage, separating regular old GIFs from your own photos.
 
-- If dimensions for an image weren't available (like if it hadn't been downloaded yet), the value it used to determine the size of the preview would be capital-B banana pants, and the app would crash as a result. This shouldn't be a problem anymore, as it now checks for invalid values/fruit-like pants and just sticks with the default when necessary.
+- Premium subscribers can disable the embedded watermark for GIFs created from Bursts and Live Photos, which is extra nice if you like GIFwrapped, but don't, you know… like-like GIFwrapped. It's totally OK if we don't have that sort of relationship, I'm cool with it.
 
-- OH GOD… DID YOU HEAR BEAR-LIKE GROWLING JUST NOW
+= THE LITTLE STUFF =
 
-- The clipboard bookmark in the Search tab could quite easily find itself with a value that didn't match the label if multiple attempts at using the clipboard occurred. Somehow, it took me a while for me to actually see this in action, but everything's been sorted out, and should work as expected now.
+As always, I've been hard at work improving some of the minor stuff too. You know what they say: there's no such thing as a small feature, just small… uh… code? I really don't know where I was going with that.
 
-- When using the save options found in the info panel, the app could bypass any check to ensure that it as valid, and end up crashing because things were all weird. I tracked down the underlying error and sorted it out, so no more of that crazy behaviour.
+- You won't really notice, but a bunch of UI stuff got a big refresh with this release. This includes things like the share sheet, the grid views, drag and drop, and more. It's honestly a huge thing, I just don't have a lot of room to detail it all!
 
-If you're having problems with anything, I'm more than happy to take your emails and tweets and do things with them! Mostly this means replying with helpful guidance, but occasionally might involve eating said emails and tweets for nourishment. Either way, follow @GIFwrapped on Twitter, or send an email off to support@gifwrapped.co, and I'll be here… hungry and waiting.
+- The awful dialog you would get when the Save to GIFwrapped extension found multiple GIFs for a tweet or URL has been replaced with a new UI for choosing the GIFs to save, just like in the Search tab. So much easier!
 
-Mostly hungry.
+- Nothing says pro like keyboard shortcuts, which I can almost guarantee no one will ever actually use, but hey… they're there, and they're super great. Whack that keyboard on your iPad and go to town, you deserve it.
+
+- I get a whole lot of emails about people wanting to delete stuff, so my response is to add a thousand (or maybe just a couple) new ways to delete items, in places people are more likely to find 'em. If this works the way I planned, I'll spend less time answering emails, and more time reminiscing about the days when I got emails.
+
+- The outlined consume bug I tried fixing the last time around managed to avoid my manic flailing, but since then I actually managed to stumble across it in real life, so now I can say with absolute certainty that it's actually fixed. Probably.
+
+If you're wondering about a bug that I haven't mentioned here, or if you're struggling to figure something out with GIFwrapped, please reach out! Send an email to support@gifwrapped.co or hit up @gifwrapped on Twitter, and I'll be available to help where I can!
+
+Thanks for reading the release notes! You're a heckin' champion, and I believe in you. Fly strong, you beautiful eagle of light. Let nothing keep you from your dreams!
