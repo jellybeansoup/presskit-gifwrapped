@@ -22,10 +22,24 @@ Daniel "Jelly" Farrelly
 iOS 9 or later, universal app for iPhone and iPad. Includes iMessage App, available on iOS 10 or later.
 
 ### Cost
-Free with In-app Purchases.
+Free with In-app Purchases (the GIFwrapped Premium subscription).
+
+## GIFwrapped Premium
+
+Upgrade your GIF game even further by subscribing to GIFwrapped Premium for USD $3.49 per year (may vary from country to country), which unlocks awesome features, removes ads, and supports an independent creator.
+
+- Turn off ads. I hate 'em as much as your do, but a guy's gotta eat.
+- Bookmark searches for easy access the next time you want them. These things are important for those GIF standoffs your's somehow always getting into. 
+- Reuse, and recycle, your search history as a list of bookmarks, so revisiting the past doesn't need to involve time travel… or memory.
+- Additional information about images within the Into panel, including number of frames, duration, and more. That way you can know your GIFs inside and out.
+- Turn off the embedded watermark in Bursts and Live Photos. I mean, liking GIFwrapped is one thing, but to plaster the logo over GIFs of your pets? Probably a bit much.
+
+If you choose to subscribe to GIFwrapped Premium, payment will be charged to your iTunes account, and you will be charged for renewal 24 hours prior to the end of the current period. Auto-renewal may be turned off at any time after purchase from your iTunes Account Settings.
 
 ## Links
 Website: <https://gifwrapped.co>  
 App Store: <https://itunes.apple.com/au/app/gifwrapped/id782319880?mt=8>  
-User Guide: <https://gifwrapped.co/faq>  
 Twitter: <https://twitter.com/gifwrapped>  
+User Guide: <https://gifwrapped.co/faq>  
+Privacy Policy: <https://gifwrapped.co/privacy>  
+Terms of Service: <https://gifwrapped.co/terms>  
