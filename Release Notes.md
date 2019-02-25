@@ -1,11 +1,15 @@
-This update is small, but powerful… it's been a busy week as I've powered through all the bugs I could get my hands on, and bringing everything back up to snuff. Thanks for being patient while I sorted it all out, you're the best!
+I know it's been a while… at least a couple of the bugs this release hopes to address have been causing people grief for a few weeks while I did my best to get to them, so maybe now is a good time to mention that the GIFwrapped Premium subscription is what helps me be able to dedicate time to fixing bugs and building features.
 
-- A small bug in the updated Dropbox engine caused sync to happen in app extensions (like the Messages app) instead of in the app itself, resulting in many users experiencing a "Waiting for Dropbox" issue. I've fixed the bad code, so it should be all good now… we can all get back to waiting for Godot instead.
+Without my subscribers, I am but a code monkey out of time. This release can happen thanks to YOU.
 
-- A bug report about duplication of images added to the library took me down a the rabbit hole of how downloads are handled in certain cases, and eventually lead to improving the performance of downloads overall, while also fixing the reported bug. NICE!
+- An oversight in the sync code was causing images to be deleted when the Library's contents was plastered over the top, causing a handful of people to lose their hard-earned collections (I'm really sorry for this, please get in touch if you haven't already). Some changes to the sync logic should ensure that this doesn't happen again, but if it does, I've put other measures in place to allow the lost items to be recovered via iTunes File Sharing.
 
-- Saving GIFs from the share extension could some times result in no file extension being added (the .gif part), which has all kinds of implications. Fortunately, I was alerted to this travesty… and thus the issue is hereby resolved. Thank you, and good night.
+- Under certain conditions, renaming files could cause duplicates to appear in the library unwittingly. As it turns out, it's because after the change was pushed to the server, the local copy wasn't updated, and things would go downhill from there so very quickly. A quick tweak to ensure the change was properly saved, and things should be much better now.
 
-- Did a bit of a minor overhaul of how updates for the grid view are prepared, which should hopefully improve their reliability a bit. I was seeing some super rare (but annoying) crashers pop up, and honestly I just wanted to play something other than whack-a-mole for a while.
+- When renaming an image, Dropbox would unnecessarily clear it from the cache and download it all over again… not an ideal scenario. I fixed a couple of places where the current revision wasn't being updated, which had it sorted it out pretty quickly. Maybe… too quickly?
 
-Remember, I'm here to help! Comments, complaints and support requests can be sent via email to support@gifwrapped.co, or you can hit me up @gifwrapped on Twitter.
+- There was a crash in the Search tab that was slowly getting worse with each new release, and it had me entirely stumped. When it finally happened to me while I was working on a separate bug, I was able to properly investigate. This allowed me to find a potential cause, and hopefully sort it out once and for all.
+
+- There was a minor issue blocking file recovery from happening when it was manually triggered. I resolved the issue, and made it so that opening the iTunes File Sharing option in the import menu causes recovery to be run automatically, which is actually kinda handy.
+
+If you're having issues, want to share an idea, or just want to gush about how GIFwrapped sparks joy for you, don't hesitate to reach out! You can catch me by emailing support@gifwrapped.co, or over on Twitter: @gifwrapped. I'm here to help where I can!
