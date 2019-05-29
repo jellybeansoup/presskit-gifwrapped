@@ -1,27 +1,27 @@
-If you've been paying attention, you'll know that I've been working on a huge update for a long time now. For the past few years (yep… YEARS), I've been working away at taking GIFwrapped towards a brand new version, and finally… IT'S HERE.
+…and we're back! Overall, I'm putting last week's launch of GIFwrapped 2 down as a great success. There was an overall positive reaction, and I'm really thankful that you all like it.
 
-You have no idea how amazing it feels to say that!
+Of course, that doesn't mean there hasn't been troubles, and with the help of a number of amazing users, I've spent the last week working hard to get things into an acceptable state so y'all can stop dealing with crashes and get back to the GIFs.
 
-- Say goodbye to tabs, and hello to a sweet universal search that makes finding the right GIF that much easier. Bookmarks and categories now apply across the board, and make it that much easier to find the GIF you want. It might not change your life or anything, but it's still a massive improvement.
+So without further ado:
 
-- The preview screen also got some much needed love. It might not look like much right now, but it has a few goodies hidden away (and some that I'm still working on). Be sure to check out its much improved ability to rename images in your Library… and organise them into folders! 
+- Mass-uploading GIFs to iCloud—something that was happening a lot, given that it's a new feature—was resource intensive in the most ridiculous way, because I made the mistake of not corralling it, result in GIFwrapped trying to upload everything… all at once. After putting some limits in place, it's now slower, but at least it's not going to go hard and die trying.
 
-- It's been a long time coming, but it's finally here: the Library can now sync with iCloud. If you've been using Dropbox, you'll need to switch over manually (you'll also need to move your files over manually, as GIFwrapped won't do it for you). If you've never used sync before, you should find it to be a huge improvement.
+- If iCloud didn't manage to get all the way through uploading the Library contents (you know, because of crashes?), it'd end up starting over again, and thus any items that had managed to get uploaded would get duplicated… sometimes a lot. Dealing with the original file properly, and updating GIFwrapped's internal metadata, should ensure that this doesn't happen any more, which is honestly a relief for everyone involved.
 
-- In the post-iTunes age, it's more and more painful to try to access recovered files from iTunes (though still totally possible, just saying). As such, I've gone ahead and enabled access via the "On My Device" section of Files.app, which provides yet another avenue for accessing the "iTunes File Sharing" folder… and thus importing to your Library.
+- The iCloud on-boarding screen wasn't checking whether it was already connected if you went back and tried to continue through that screen again. That's obviously not ideal, so I added the check, and now you can zoom around the on-boarding screens with no regrets.
 
-- If you've ever felt a bit naked with the clipboard contents hanging out in the Search tab for all to see, you can now clear it out with a quick swipe. If only things were always that easy to get rid of.
+- It turns out that MoPub's privacy policy screen is disabled when Limit Ad Tracking is turned on (totally worth doing FWIW). I wasn't aware of this, which resulted in _my_ screen still being shown during on-boarding, and thus blocking people from getting into the app. One quick check later, and y'all should be able to get right on in now.
 
-- The caching layer has gotten more and more complex over the last year or so, as I attempted to improve its overall speed. As part of doing so, I managed to introduce a pretty significant race condition that was causing a crash on launch. Spent some time rebuilding the problematic parts, so it should be pretty solid now… and just as quick.
+- After saving a GIF to the Library, the UI could find itself frozen in place, unwilling to move in fear of the monster returning. Also partly because there was a threading issue causing a deadlock, so I had a go at making a few more things asynchronous, and hopefully it should be running much smoother now.
 
-- I spent a little time improving the code that parses Twitter URLs for their juicy GIF content, which has made the results produced by it so much more useful. Instead of just sharing the original post's details, things like the file name and sharing URL are actually representative of the tweet they're actually part of. Should it always have been this way? Probably yes.
+- The Info screen's name field wasn't being updated appropriately after renaming an image, which is just straight up unsettling (and a little awkward). Turns out I hadn't updated the relevant code when introducing the new screen for renaming and moving, so I did that and BAM! Solved.
 
-- Using Save to GIFwrapped on tweets was fraught with issues: the list of GIFs returned wasn't as good as it could be, and then sometimes it'd save a GIF reply to the video you'd attempted to save (which isn't supported). Some adjustments to how URLs are handled means that you shouldn't end up inadvertently saving the wrong GIF any more.
+- Importing from the Inbox was being run unnecessarily. This is an old method for importing to the Library with the share extension, and it's not really used anymore, so it's somewhat pointless to run it every time. I sat Turbo on it, and now it can't get up. Cat gravity!
 
-- Sorting your Library by name occasionally differed from what you might expect, because it didn't use natural number sorting, so it'd end up with 1, 10, 11, 2, etc. A quick change to use the same sorting you'd get in Finder made short work of that. I like it when a bug fix takes one line of code.
+- When using iCloud, the Sharing Links option in Advanced settings would incorrectly reference Dropbox. This was just an oversight, but I was able to fix it up thanks to some eagle-eyed users with a thirst for adventure!
 
-- The icon selector for Premium subscribers was causing some issues, so I embarked on a whirlwind attempt at rebuilding it from scratch, simplifying a few elements as I went. Because that makes sense.
+- If the drawer was open all the way, and the bookmarks view wasn't all the way at the top, trying to drag on the little handle to close the drawer just wouldn't work. A very minor tweak to the drawer's expectations of when it should stick to the top, and it's now working as expected!
 
-- In an effort to feel less gross when collecting data about crashes and general issues throughout GIFwrapped, I'm trying out a different crash reporting service called Sentry. Right now it's running side-by-side with Fabric/Crashlytics, but if everything goes well, I'll look at ditching that altogether, which would be amazing.
+- With a long enough list of folders, the name field of the "Move to Folder" screen could get in the way of the last couple items, which can be a giant pain. The list just needed a gentle nudge so it could scroll clear of the field, and now all your ZZ Top GIFs can be moved to their appropriate home.
 
-As always, if you have any problems, want to suggest an idea, or are just keen to let me know how much you enjoy GIFwrapped, you can reach out to me by emailing support@gifwrapped.co, or hit up @gifwrapped on Twitter. In the meantime, I hope you enjoy this new version of GIFwrapped, I think it's truly my best release yet.
+Thanks to all of you for using GIFwrapped! As always, I'm here if you're running into problems, so just toss an email at support@gifwrapped.co, or hit me up @gifwrapped on Twitter. I'm here to help!
