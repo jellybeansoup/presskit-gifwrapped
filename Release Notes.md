@@ -1,15 +1,21 @@
-The quest to stabilise v2 continues with a bunch of additional tweaks and changes to alleviate various crashes, failures to launch, and straight up freezing. I know these problems have continued to affect many of you, even after I patched a number of problems, so thank you all for being patient while I worked on sorting these new ones out.
+Hello again! I know I've been quiet for a few weeks, but I'm back again with an update to fix some issues that many of you have graciously let me know about. Thanks for being patient while I worked on them, some of them required extra digging!
 
-- The iCloud on-boarding was being unnecessarily displayed if the Library's metadata hadn't been loaded in time to determine if it was necessary. To resolve this, I've forced it to wait for the metadata to be ready, and otherwise added a flag so if you see it once, you'll never see it again.
+- Getting iCloud sync to work with the existing Library has been a challenge, and I've been finding that occasionally it'll throw up on itself and then roll around on all the good furniture. I took a pass at improving my handling of various edge-cases, which should hopefully reduce the issues and make the whole experience much more stable all around.
 
-- Opening images from Files.app was a little weird under certain circumstances. I made a small change that should ensure we correctly handle any downloading that needs to happen in the background, so the app doesn't get stage fright and freeze up before displaying the image.
+- In semi-related news, when turning iCloud on and/or off, the stored preference was being changed but the rest of the code wasn't getting the message (literally). The problem was that I had inadvertently caused the piece of code that notifies everyone of the change to be skipped entirely (you might think it's simple, being just a toggle switch, but it actually hides many layers of complexity… like an onion?). In any case, I've reworked that code so things are working as expected again.
 
-- When searching (by actually hitting the Search key), the queries were often being run twice: once to grab the result prior to displaying them, and then again, upon actually displaying them. This was caused by the status of the first query being cleared out when dropping the items into the UI, so stopping that from happening quickly sorted things out.
+- Save to GIFwrapped was having issues when trying to save items, often getting stuck and requiring the host app to be relaunched, other times not actually saving anything at all, and sometimes both! The culprit seems to have been a threading issue (because they all are at the moment, FML), but after one little tweak to the code, it's all patched up and ready to save again.
 
-- Search wasn't always showing useful errors… like if GIFwrapped doesn't have permission to access Photos, or if there's no internet. This didn't make sense to me, so I tracked down the underlying problems and fixed them, resulting in an overall much improved search experience for all!
+- The storage used for keeping Library-related values wasn't being accessed in a way that was entirely legit (which happens when you're working against the clock), and thus was causing more crashes than I would like. After re-thinking some of my formerly hasty decisions, I've managed to make things a lot less problematic, and thus more stable.
 
-- The Library's messages about having no results were at best unnecessary, and at worst confusing as all get out. I've stopped it from displaying when there's more important content (like actual results), and tweaked the copy to better indicate how one uses the new universal search bar.
+- Using the Retina option for Pixel Density was a little wiggy due to the image size not respecting the zoom scale when first loading up. A quick change to adjust the size has got that sorted out, and now you can look at your tiny, tiny GIFs at their beautiful tiny, tiny size.
 
-- While working on other issues, I stumbled upon a small piece of code that could potentially cause big lockups, due to reading files from the main thread (definitely a no-no). Under the best possible circumstances, it should only ever have caused a little stuttering when scrolling, but that sort of thing has a tendency to balloon out… so I fixed it.
+- The API used to render user guide articles was deprecated a while ago, and I hadn't even noticed. I moved things over to the newer APIs, which is less of an improvement for all of you, and more of a quality of life thing for future-me.
 
-As always, I do try to be available if you run into problems while using GIFwrapped, so just toss an email at support@gifwrapped.co, or hit me up @gifwrapped on Twitter. I'm here to help!
+- The grid view wasn't grabbing image metadata from the source of truth, and instead would end up using its own copy and thus doing some really weird stuff. I think I'd originally done this because doing lookups would be slow… so I changed it back, but also added some indexing to make sure it's still nice and quick.
+
+- One user was experiencing crashes over and over again due to an item somehow being stored without a modification date. When GIFwrapped would try to read the item from disk again, it'd freak out… but I've calmed it down, given it some camomile tea, and it shouldn't have problems anymore.
+
+I'm here to help if you find yourself running into problems while using GIFwrapped, so just toss an email at support@gifwrapped.co, or hit me up @gifwrapped on Twitter.
+
+Have a great day!
