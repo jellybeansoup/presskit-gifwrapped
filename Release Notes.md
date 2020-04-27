@@ -1,9 +1,17 @@
-Back again! Had a couple of tricky bugs to figure out this time around, and took the opportunity to add some of that sweet, sweet pointer action that you can do on iPad now.
+I’m back yet again, and attempting to resolve a number of problems that have been bothering people… and also some that weren’t.
 
-- Took a pass at the low-hanging fruit around hover gestures on iPad, mostly hitting the spots that already had arrow key support (plus a couple of extra spots where it made sense). I'm sure there's more that can be done, but it's a great start.
+- I doubled the number of alternative app icons available to Premium subscribers, mostly by adding a bunch of colour variations. There’s also a new screen that shows up in the Settings screen (again… for Premium subscribers), making the option a little easier to find.
 
-- A few people (more and more) have been seeing a crash on launch which I just couldn't get enough information on to properly fix. Managed to sort the information part out in the last release, which allowed me to nail down a potential cause and resolve it. I'm basically a detective now.
+- I (finally) added a full Search History list to Settings for Premium subscribers, with all the sweet functionality you'd expect. That should make it a little easier to manage.
 
-- Chonky GIFs are and always will be problematic for me (due to their extra-cuddly size), and most recently they were blocking the UI for a moment when loading, which became real apparent when swiping through previews. One of the heaviest parts of loading a GIF is decoding the data, which the library I use does on the main thread (where UI stuff is done), so I moved that to a background thread and it feels muuuuuuch smoother now.
+- Keyboard shortcuts for the preview screen stopped working at some point, so I jumped in and wired them up again, adding some new ones to support the new paging feature while I was at it. What can I say? I'm a giver.
 
-Until next time. Stay safe out there!
+- Normally my philosophy is "I don't support iOS betas", but I was seeing a truckload of pointer-related crashes from people continuing to use early iOS 13.4 betas, even after it was officially released… and couldn't escape the emails/tweets. So I fixed it. Please update your dang phones.
+
+- A previously-resolved bug seemed to have let some "malformed" names through when renaming entries, and despite resolving the issue itself, there were a handful of sync issues that resulted from these bad paths. I added some workarounds to help resolve these, so hopefully it should all balance out now.
+
+- I've had one user in particular who has been struggling with a crash on launch that has been real hard to nail down. I went through my crash list, identifying and resolving a bunch of crashes… but knowing my luck, they’ll still have problems. I'm doing my best, promise!
+
+If you spot any problems with the app, please be sure to let me know. Tweet @gifwrapped, or email support@gifwrapped.co, and I’ll be sure to take note.
+
+Don’t forget to wash your hands!
