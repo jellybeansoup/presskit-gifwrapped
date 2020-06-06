@@ -1,17 +1,25 @@
-I’m back yet again, and attempting to resolve a number of problems that have been bothering people… and also some that weren’t.
+There’s nothing like a string of unrelated events that take what was intended to be a smallish release focused on resolving a handful of bugs, and just blowing it out into a huge release with a bunch of additional features and enhancements.
 
-- I doubled the number of alternative app icons available to Premium subscribers, mostly by adding a bunch of colour variations. There’s also a new screen that shows up in the Settings screen (again… for Premium subscribers), making the option a little easier to find.
+Now if you’ll excuse me, I need to collapse.
+ 
+- Some of you may have heard about a ginormous data-sucking monster buying Giphy, a.k.a. the search engine that powers GIFwrapped's search. In response, I feel a significant need to drop them like a hot coal, so I started by adding Gfycat and Tenor as alternatives, and then straight-up switched the default to Tenor (which is owned by Google… so only slightly better). For what it’s worth, you can still access the others: just include the bang !gfycat or !giphy with your search, and GIFwrapped'll use the respective engine for your search.
 
-- I (finally) added a full Search History list to Settings for Premium subscribers, with all the sweet functionality you'd expect. That should make it a little easier to manage.
+- Ad networks suck for various reasons, but ads have always been a part of GIFwrapped's strategy, so I decided to swap out the big, skeezy ad network for some home-rolled code. There’s still a lot of work that’ll happen with these behind the scenes, but my aim is to have a variety of ads that honor your privacy and supports independent creators.
+ 
+- As if I needed more to do, Twitter went and updated their website in such a way that it broke my ability to parse tweets in search of their sweet GIFs. Anyway, solving this was two-fold: websites are now loaded using a hidden WKWebView so that any javascript can run as desired, and then my tweet parser should now also handle the updated markup.
 
-- Keyboard shortcuts for the preview screen stopped working at some point, so I jumped in and wired them up again, adding some new ones to support the new paging feature while I was at it. What can I say? I'm a giver.
+- I've had a decent number of emails and tweets telling me that the app would lock up during saving, deleting, or practically any situation where the library contents are being modified. This is a really tricky issue to solve, especially when I can't replicate it on my end, but I took a dive into my threading and locking code to try and alleviate any potential pain points I could find. Fingers crossed, I guess?
 
-- Normally my philosophy is "I don't support iOS betas", but I was seeing a truckload of pointer-related crashes from people continuing to use early iOS 13.4 betas, even after it was officially released… and couldn't escape the emails/tweets. So I fixed it. Please update your dang phones.
+- When using Dropbox, library changes weren't properly getting pushed to the server unless an image was accessed or modified, which is sorta weird, and not entirely desirable. It should now make an attempt when sync is first started up, just in case.
 
-- A previously-resolved bug seemed to have let some "malformed" names through when renaming entries, and despite resolving the issue itself, there were a handful of sync issues that resulted from these bad paths. I added some workarounds to help resolve these, so hopefully it should all balance out now.
+- In other Dropbox news, the library wouldn't get cleared out properly when disconnecting, likely due to some incredibly minor change that happened months ago and flew under the radar. Love it or hate it, this is the intended behaviour, so I went in and fixed it up. Please throw your tomatoes one at a time.
 
-- I've had one user in particular who has been struggling with a crash on launch that has been real hard to nail down. I went through my crash list, identifying and resolving a bunch of crashes… but knowing my luck, they’ll still have problems. I'm doing my best, promise!
+- Fun fact: the main UI actually has two separate search bars that are kept in sync. One lives in the "drawer", and the other is popped into and out of the navigation bar as needed on iPad. Problem is, they could get into scraps over whose job it was to perform a search, causing a crash. Here's hoping they play nice going forward.
 
-If you spot any problems with the app, please be sure to let me know. Tweet @gifwrapped, or email support@gifwrapped.co, and I’ll be sure to take note.
+- Malformed paths were still a thing that I was seeing errors for, and it turns out that, while implementing my "fix", I fell for the same ambiguity that caused the issue in the first place. Good news is that I was able to fix it properly this time, and I also took a moment to clear up the ambiguous code, to avoid this sort of nonsense happening again.
 
-Don’t forget to wash your hands!
+- The preview transition where the image grows out of the grid view was a little… wobbly, and showing a few cracks here and there. So I took a closer look, and fixed a few small details that add up to a much smoother transition that uses significantly less memory. You're welcome.
+
+- Thumbnails got a a little lovin' as I delved in and refactored the system that manages their creation and storage to make it easier for me to follow, and thus work better. I also made it a nice coffee, so it should hopefully be less likely to jam up or drop images now.
+
+If you come across any issues with the app, I’m here to help… or at least listen, and then disappear while I head off to try and resolve them. Tweet @gifwrapped, or email support@gifwrapped.co, and I'll get back to you as soon as I can.
