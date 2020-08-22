@@ -1,23 +1,27 @@
-Over the past few weeks, I’ve been laying out plans for GIFwrapped’s future, so a lot of this release is in anticipation of that: rebuilding parts of the code to improve them, and to allow me to bring exciting new features to GIFwrapped down the road. Lest you get the idea that I’m a big ol’ tease, however, this release also adds something exciting and new.
+A developer’s job is never done, and I’ve been working hard to tackle as many of the issues I come across as I can, so I hope this release helps ease any problems you might be running into!
 
-- Thanks to some recent refactoring of the way the main app’s universal search layer works, I was able to bundle it up and bring the feature over to the Messages app, allowing for parity between the way search works in both the main app and the Messages app. This means you can now search anywhere for a GIF to send, right from a conversation in Messages, just like you would within GIFwrapped itself. Hooray!
+- I gave the App Icon screen in GIFwrapped’s settings a little overhaul, and made some of the less exciting icons free for everyone to use. What can I say? I’m a giver.
 
-- The code managing GIFwrapped's rather complicated share functionality—including the menus and actions that accompany it—has existed in the same form since almost the beginning (except for when I wholesale ported it to Swift), and it was getting a bit… crusty. I buckled down, tore it to pieces, and built a new version out of the rubble… which should hopefully work about the same as before. It’s really more of a self-care thing from my perspective, but at least it should be less prone to problems as I expand its feature set going forward.
+- I discovered that one of my recent bug fixes introduced a small issue that caused some values to be ignored when comparing entries before updating the library's metadata store. This is mostly fine, as any of these values would, in practice, be accompanied by others that would've been caught, but a bug is a bug is a bug, so I fixed it.
 
-- Dragging GIFs from the main app’s grid view has been a thing for a while now, but I never did get around to implementing the functionality for the preview screen… until now. Just another thing to cross off my bucket list.
+- While reworking the sharing menu in the last release, I messed up some logic causing the menu's actions to be loaded up _after_ checking to see which ones had been loaded. This had the side-effect of making the share button in the preview screen fail to show the shortcut list first—which isn't how I intended it—so I fixed that.
 
-- Thanks to a handy watch dog (woof!) that I’ve been using with my beta testers (its bark is honestly worse than its bite), I was able to surface a potential cause for the lock ups people have been experiencing: resolving bookmarks used to track iCloud files from the main thread. The moral of the story here is: don’t do that.
+- I also did some additional refactoring of the way that share sheets (the standard iOS ones) are presented in order to enable a future feature which hasn't been switched on yet (because it isn't ready). When sharing via the standard means, you shouldn't really notice much of anything, but trust me… it’s different.
 
-- Tweets could occasionally be dropped from search results, particularly if they were a reply to another tweet. Fortunately, I was able to improve the quality of the results returned by tweaking how I parse replies, but I swear I will never be done fixing bugs that have cropped up thanks to Twitter's site overhaul from several weeks ago. SIGH.
+- The preview image couldn't initiate a drag on the iPhone. It's absolute nonsense, I know (where are you going to drag it to?!), but that future feature might make use of it somehow, so I enabled it anyway.
 
-- I was occasionally seeing images getting stuck in an update loop, constantly attempting to merge non-existent changes back to the metadata store. Turns out the fix was two-fold: first I fixed a bug that was causing the metadata to appear to have changed even when it hadn't (oops), and the second was a little refactor to avoid modifying the store unless it's _actually_ necessary.
+- I noticed that there was a fun, new crash related to the new way image metadata is updated, caused by the old copy not being removed from the store correctly before inserting the new copy. I added a fallback solution for this case (which is slower, but won't fail), and now it shouldn't be causing any more trouble.
 
-- The preview screen wasn't handling errors particularly well, with one (rather useless) error that was used across the board. This is a regression that happened a while back, caused by past-Jelly ditching the old method of downloading and displaying images… and thus the lovely, custom errors that came with it. It's still not perfect (is anything?), but it's a damn sight better than what past-Jelly left us with. JERK.
+- The remote configuration setup I use to manage the minutia of certain features (like how GIFs are shared to different apps) wasn't reloading correctly when I updated the server-side file. It's not really a big deal, as the file gets bundled when shipping updates, but it's always nice when things, you know... actually work.
 
-- The way I was retrieving Animated Images from Photos seems to have been broken for a while now, stopping new images from showing up in the results, but it was a fairly easy thing to resolve. I just wish I’d known sooner.
+- I was seeing an occasional crash caused by the presentation of a new-ish error alert in the Messages app. Basically it was because it being presented from a background thread, and dammit past-Jelly, you know you're not supposed to pull that nonsense.
 
-- It only took me… uh… 3 years to support the fancy authentication stuff that Apple introduced back in iOS 11, but here we are. I've added it to the flow for connecting to Dropbox. That's about all I have to say about it.
+- I continue to get a lot of reports of Twitter-related issues—particularly ones where the content is considered sensitive, but the user doesn't realise it—so in an effort to reduce the number of false negatives (I'm only one guy, and not at all responsible for Twitter's life choices), I've added the ability to preview the Tweet in a browser right from the error message.
 
-Thanks for using GIFwrapped, and doubly so for reading these release notes! If you’re having any trouble, please reach out by emailing support@gifwrapped.co, or tweet @gifwrapped, and I’ll do what I can to help. If you’re feeling particularly generous, a review on the App Store is always welcome, too (but fair warning: I don’t provide support through reviews).
+- Dug into the Twitter parsing once again (groan), only to discover that a super weird bug in the library I use to pull apart HTML was bugging out on me. I'm not sure _why_, and I'm terrified to pull apart Twitter's HTML by hand to figure it out (please no), but I did manage to figure out a working solution, so now we're just gonna back up slowly. Real slowly.
 
-Until next time, remember: you are a large, majestic mountain trout.
+- I also discovered a bug that was causing some tweets to be wrongfully ignored due to a casing issue: basically, it was comparing @GIFwrapped vs. @gifwrapped and deciding that they weren't the same. That's clearly not the case, so I tweaked things to do a better job, and the results should be much improved.
+
+Thanks for using GIFwrapped: you’re a champion, probably! If you’re running into any problems with the app, please reach out by emailing support@gifwrapped.co, or tweet @gifwrapped. 
+
+Until next time!
