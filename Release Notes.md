@@ -1,19 +1,13 @@
-Oh, hi there! You got here just in time for me to tell you about the improvements in this release. Nothing big, mind you; just a little touch up here and there to help GIFwrapped be the best it can be.
+I don't know about you, but from where I'm standing, 2021 feels a bit like life is pressing the pedal to the floor. As such, it's time to make good on the, uh… threat …I made back in January: this is the last GIFwrapped release to support iOS 13. On the up side, I've spent a little time duct taping a few sore points to try and improve things before I drop it like a hot coal.
 
-- When I made changes to the various sharing activities in the last release, I messed up the monitoring of the underlying progress, causing it to occasionally crash on iOS 13. In my defence, KVO is finicky… but it does help to actually handle the observation stuff in the right place, which I'm definitely doing now. Promise!
+- I ran across a few ways that the iCloud sync engine was causing duplicates to be created within the library. One was caused by moved or renamed files being synced from iCloud and GIFwrapped being unable to find the file locally (meaning that GIFwrapped treated it like a new file), the other being that when moving a file the update to the data store could end up happening twice. I tightened things up, found a way to better connect local copies to their iCloud counterparts, and GIFwrapped's iCloud sync should officially be the best it ever has been.
 
-- In an attempt to improve GIFwrapped's handling of Twitter GIFs, I jumped in and made some small modifications to help it avoid failing before the underlying page finishes loading. This means you shouldn't be seeing errors that pop up briefly, only to be replaced with content a few moments later. It also means that the "Save to GIFwrapped" extension should finally work for Twitter GIFs again. Here's hoping it sticks for a while.
+- I took a dive into the screen for renaming and moving files in an attempt to make it a little smarter, a little easier to understand, and a little harder to get into a situation where one could actually break stuff in one's Library. This is predominantly just a UI refresh, and it's not perfect, but I'm hoping it'll help make moving and renaming stuff clearer.
 
-- While I was poking around in the Twitter-handling code, I was able to identify a couple more potential sources of tweet content, thus improving the chances that opening a tweet URL will have a happy ending, particularly on occasions when parsing the HTML itself falls over.
+- The link on the Premium screen for managing subscriptions got broken when Apple changed it a while back, and it took me way to long to notice, and way too long for me to fix once I did (and I only did because a few nice people pointed it out to me several times, while I clearly just ignored them like a jerk? I'M SORRY, NICE PEOPLE. YOU DESERVE BETTER).
 
-- On occasion, when switching from an app where the keyboard is being displayed, GIFwrapped would open up thinking that the keyboard was visible, causing it to look weird. I got a couple of bug reports about it, so I jumped in to try and stop it from happening. Fingers crossed!
+- In an effort to curb the usage of App Store reviews as support requests, I've removed the link to write a review from GIFwrapped's Settings screen. You're still free to write a review—especially if you have nice things to say—but you'll have to do it the old fashioned way. Sorry!
 
-- The custom preview transition was a little janky for anyone using retina pixel density, so I jumped in and fixed it up real nice. While I was at it, I took a pass at making the in-app explanation of this option a little more clear, because I've gotten confused emails more than once, which is way too many.
+Thanks for using GIFwrapped! I'm still over here continuing to work on improving things, so if you need to get in touch, just send an email to support@gifwrapped.co, or hit up @gifwrapped on Twitter. I'll do my best to help you out.
 
-- I've had the option to disable URL sharing as a hidden debug option for a while, and in my desire to work towards a cleaner settings screen, I figured I could toss it in as an actual option. WHAT COULD GO WRONG
-
-- The settings button felt wrong being above the grid view instead of being above the sidebar on iPad, so I moved it. Yeah, you heard me. I know I promised no big changes, but I really couldn't help myself.
-
-That's it! Just a short on this time. I'm still over here continuing to work on improving things, so if you need to get in touch, just send an email to support@gifwrapped.co, or hit up @gifwrapped on Twitter. I'll do my best to help you out.
-
-Until next time!
+Until next time, remember: BLACK LIVES STILL MATTER.
