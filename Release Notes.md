@@ -1,13 +1,23 @@
-I don't know about you, but from where I'm standing, 2021 feels a bit like life is pressing the pedal to the floor. As such, it's time to make good on the, uh… threat …I made back in January: this is the last GIFwrapped release to support iOS 13. On the up side, I've spent a little time duct taping a few sore points to try and improve things before I drop it like a hot coal.
+Over the past few months, I’ve been zoning in on GIFwrapped for macOS; slowly getting it ready for release, and making it as good as it possibly can be. Because it shares a large portion of its codebase with the iOS version, however, there’s a whole pile of small improvements to the iOS app that I’ve made over the past few months.
 
-- I ran across a few ways that the iCloud sync engine was causing duplicates to be created within the library. One was caused by moved or renamed files being synced from iCloud and GIFwrapped being unable to find the file locally (meaning that GIFwrapped treated it like a new file), the other being that when moving a file the update to the data store could end up happening twice. I tightened things up, found a way to better connect local copies to their iCloud counterparts, and GIFwrapped's iCloud sync should officially be the best it ever has been.
+Like seriously, this release of GIFwrapped almost feels like a whole new app. Almost.
 
-- I took a dive into the screen for renaming and moving files in an attempt to make it a little smarter, a little easier to understand, and a little harder to get into a situation where one could actually break stuff in one's Library. This is predominantly just a UI refresh, and it's not perfect, but I'm hoping it'll help make moving and renaming stuff clearer.
+- GIFwrapped’s in-app settings have been getting a bit crusty of late, as apart from the occasional addition or removal, they haven’t had any love… and it was quite honestly a big ol’ mess. I’ve attempted to rectify this by taking everything and shuffling it around into more appropriate spaces, rebuilding the whole mess from the ground up, and basically just treating it like it’s important. Funny how that makes things a lot better.
 
-- The link on the Premium screen for managing subscriptions got broken when Apple changed it a while back, and it took me way to long to notice, and way too long for me to fix once I did (and I only did because a few nice people pointed it out to me several times, while I clearly just ignored them like a jerk? I'M SORRY, NICE PEOPLE. YOU DESERVE BETTER).
+- A few of the list style screens got a small overhaul; like the GIF info panel and the list of files in the File Sharing folder. This effort seems to have made it all feel a little nicer, but that could just be my confirmation bias talking. Either way, it finally allowed me to rip out one of the oldest pieces of code in GIFwrapped: so long StaticTables, and thanks for all the fish.
 
-- In an effort to curb the usage of App Store reviews as support requests, I've removed the link to write a review from GIFwrapped's Settings screen. You're still free to write a review—especially if you have nice things to say—but you'll have to do it the old fashioned way. Sorry!
+- It’s only been 18 months or so since that game about relocating to an island and paying into an untrustworthy raccoon’s pyramid scheme came out, so what better time to introduce an icon inspired by the most obvious counterpart from the game? In true fashion, you’ll have to spend a few bells on getting Premium to enjoy this icon.
 
-Thanks for using GIFwrapped! I'm still over here continuing to work on improving things, so if you need to get in touch, just send an email to support@gifwrapped.co, or hit up @gifwrapped on Twitter. I'll do my best to help you out.
+- The interactive swipe gesture for dismissing the preview screen could cause the screen to snap to the first GIF in its collection anytime one got cold feet and tried to cancel out; a particularly annoying bug for those Premium subscribers who have paging enabled. It’s fixed now, so let’s just chalk this up to more of those classic past-Jelly misadventures.
 
-Until next time, remember: BLACK LIVES STILL MATTER.
+- The GIF renaming screen’s bottom bar didn’t connect to the bottom of the screen, which looked a little weird on iPhones with safe area insets. This was due to a straight-up amateur move involving an unruly layout constraint, and has now been taken care of.
+
+- Despite my best efforts, issues causing GIFwrapped to freeze up can be incredibly tricky to track down; partly because GIFwrapped is so complex, and partly because I’m barely competent at the best of times. Nevertheless, I spent a bunch of time deciphering a handful of potential causes, tracking them down, and finally making good on clearing out what I could find and understand.
+
+- Every now and then I discover that all the objects that make up the preview screen aren’t being released properly when you exit, which causes them to stockpile in the background. This can get costly pretty quickly, and it’s not generally something you want. Anyway, it happened again, so I figured it out and resolved it… for now.
+
+- I went digging into the code for the cells within the main grid view and discovered a treasure trove of little bugs and behavioural oddities. After spending some time looking through it and tweaking things, I think I got it working just a little bit more nicely. MINOR IMPROVEMENTS FTW
+
+Thanks again for using GIFwrapped. I’m hard at work making things better and getting a macOS release ready to go, but if you need to get in touch, toss an email to support@gifwrapped.co, or reach out to @gifwrapped on Twitter. I’ll do what I can to help.
+
+Until next time, kids.
