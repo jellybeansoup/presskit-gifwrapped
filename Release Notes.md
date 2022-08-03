@@ -1,13 +1,15 @@
-Time for another GIFwrapped release, with fixes for bugs and some minor improvements. Very, very minor.
+There's no shortage of things to improve within GIFwrapped, and so I've been hard at work improving things (as I'm sure you know). This release in particular has some real doozies.
 
-- Pretty quickly after WWDC, I started to receive messages to let me know that the app was crashing on launch for a specific subset of very eager updaters. I don't officially support future OS versions (and I'm certainly not allowed to talk about them), but what can I say? I'm a softy.
+- A mate of mine has been gently nudging me for months about an issue with downloading and displaying the preview for GIFs stored in iCloud, and because I'm a good friend… the problem has sat in my backlog waiting for me to spend time on it for months. The good news is that I finally did, so downloads from iCloud are now less likely to fail immediately after a cold launch, or when using the Messages app. Aren't I _such_ a good friend? DON'T ANSWER THAT
 
-- Ever since iPadOS introduced native keyboard navigation, it's been at odds with the version I built a year or five back. This is good and bad, because while I'm definitely keen to delete code, I'm not in a position to do so juuuust yet. In the meantime, I've done what I can to improve things a touch, just to make it usable again.
+- iCloud downloads have historically also been a source of UI lockups, particularly when a bunch are happening all at once. With this in mind, since I was in there already, I decided to refactor things to be a little less of that. Feels much better… to me at least.
 
-- The "Get Info" option in the context menu isn't really used that often, so it should be no surprise that it got broken on iPadOS and macOS somewhere along the way to updating the preview screen. A little rearranging of the logic to have the UI state updated at the right moment, and the option works once again.
+- Scrolling the main grid was real janky on macOS, and I never really dug into exactly why. At some point I did make some minor improvements, but nothing particularly noticeable… until I recently looked into why the memory usage was so high. Turns out both issues had the same cause: the thumbnails were e-flippin-normous. After a little tweaking of the grid scaling to reduce the overall scale, the memory usage plummeted and the grid now scrolls very nicely. You're welcome.
 
-- The advanced command words (which start with a bang and allow you to use an alternate search engine for a query) weren't working correctly because, for whatever reason, they were getting left in the query being sent to the server, and it'd totally bone the results you got back. I reworked the way it's handled, and now they work again. Clockwork.
+- I've not exactly been thrilled with the Settings screens that I built out in SwiftUI, in part because of simple stuff, like the fact that the Search History screen in Settings lost its search controller because of the way that SwiftUI embeds UIViewControllers. So when a mate of mine (not the same mate for those keeping score) showed me how to have my cake and eat it too, I was so thrilled that I just had to get it in ASAP.
 
-- I wanted a better solution for my logging and analytics infrastructure that would let me share most of it between a bunch of my various apps with minimal effort. To do so, I ripped most of the good stuff out of GIFwrapped and into a format I could share, then reintegrated the whole thing back in. Not a big deal for you, but a decent quality of life improvement for me.
+- I've been noticing a regular issue where results from search engines fail to be decoded for one reason or another, which isn't ideal. I adjusted the parts that were failing to make 'em a little more robust (stupid APIs returning empty strings instead of nil), and they should be OK from here on out.
 
-Thanks so much for using GIFwrapped! I really hope you enjoy it, and if you don't… I guess you could probably reach out to me and let me know why? Emailing support@gifwrapped.co or tweeting @gifwrapped should get your words in front of my face, and from there I will do what I can to help.
+If you have a particular bug you'd like to see fixed, you'll be super pleased to know that you can tell me all about it. Either send an email to support@gifwrapped.co or tweet @gifwrapped… or even jump on r/gifwrapped and let me know what you're thinking. In the meantime, I'll just be over here continuing to make things a little better for y'all.
+
+Until next time!
