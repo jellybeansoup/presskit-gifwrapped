@@ -1,9 +1,11 @@
-- I finally (finally!) got around to tying up some loose ends in the preview screen rewrite I _mostly_ released back at the beginning of June. This improves the behaviour of the transition from the image to info, makes the scroll a little more forgiving, and has the scrollbar appearing ON TOP of the image. SORCERY!
+I know! Just when you were thinking "Geez, that guy who makes GIFwrapped must be taking one hell of a nap," I appear out of nowhere and bring you an update. It's just what I do.
 
-- Shortly after launching the last update, I noticed that there were situations where a download could be enqueued multiple times. Not really a big deal, except for the fact that it also meant that the app would crash. I tweaked the code to only allow it to enqueue the download one time, so that should be the end of THAT.
+- The big news with this update is that I finally got fed up with my insanely fragile Twitter integration, so instead of doing the normal thing and fixing it, I tore the entire Search infrastructure that I built and re-did the whole thing from scratch… and this time I didn't just use a paperclip and a wad of gum. Much better. YOU'RE WELCOME.
 
-- There were a couple of instances where, upon following a series of steps, one could cause the search drawer to appear while looking at a GIF preview, and that's not how it's supposed to work. I threw in some breakpoints, ran through a few scenarios where I knew it was getting triggered, and it should behave a little better now.
+- I was also scrolling through the simulator the other day, with a bunch of thumbnails downloading from my Dropbox library… when I stumbled headlong into a UI lockup. I took a beat, dug into it a bit, and discovered that past-Jelly chose to make every access of the connected sync client one where it has to iterate through a list and verify that the client is connected, which is… bad. Good news: it's not that way any more.
 
-- While testing something entirely different, I stumbled on the fact that the Dropbox sync status wasn't being updated properly, and causing it to get stuck. Long story short, past-Jelly had wired things up with a didSet and then wrapped things with a lock for thread safety, but those two things weren't living well together, so one had to go. Don't worry, though… it wasn't the thread safety part, I swear.
+- At some point, the About screen's illustration started getting weirdly inset from the screen edges, so in a fit of mild annoyance, I ripped out the SwiftUI-powered List in favour  of a proper compositional layout in UIKit. Future-Jelly will probably regret this move, but he can go jump in a lake… at least this one looks and works as intended.
 
-- I've been meaning to give the ol' GIFwrapped icon a bit of a refresh for a while now, and I spent a couple days in Sketch getting things nice and tight. It's pretty minor, but if it helps any… there's also six entirely new alternate icons to choose from, including a pretty spiffy rainbow one. YOU'RE WELCOME
+Thanks for using GIFwrapped! If you'd like to reach out and tell me secrets (only good ones please), you can do so by emailing support@gifwrapped.co.
+
+Until next time… eat your vegetables. Unless you're a carnivore.
