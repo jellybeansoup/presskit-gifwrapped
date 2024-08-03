@@ -26,7 +26,7 @@ Free with In-App Purchases (the GIFwrapped Premium subscription). Supports Famil
 
 ## GIFwrapped Premium
 
-Upgrade your GIF game even further by subscribing to GIFwrapped Premium for USD $4.99 per year, or USD $0.49 per month (may vary from country to country), which unlocks awesome features, removes ads, and supports an independent creator.
+Upgrade your GIF game even further by subscribing to GIFwrapped Premium for USD $9.99 per year, or USD $0.99 per month (may vary from country to country), which unlocks awesome features, removes ads, and supports an independent creator.
 
 - Turn off ads. I hate 'em as much as you do, but a guy's gotta eat.
 - Page between GIFs in preview, and even scrub between frames. Fully bask in their pixellated glory.
