@@ -17,7 +17,7 @@ User Guide: <https://gifwrapped.co/faq>
 Twitter: <https://twitter.com/gifwrapped>  
 
 ## Copyright
-Copyright 2022 Daniel Farrelly
+Copyright 2024 Daniel Farrelly
 
 ## More Information
 Daniel Farrelly  

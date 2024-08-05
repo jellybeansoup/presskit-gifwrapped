@@ -19,7 +19,7 @@ Daniel "Jelly" Farrelly
 4 February 2014
 
 ### Platform
-iOS 14.1 or later, universal app for iPhone and iPad. macOS 11 or later. Includes iMessage App (on iOS).
+iOS 15 or later, universal app for iPhone and iPad. macOS 14.5 or later. Includes iMessage App (on iOS).
 
 ### Cost
 Free with In-App Purchases (the GIFwrapped Premium subscription). Supports Family Sharing.
