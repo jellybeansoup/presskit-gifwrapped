@@ -1,13 +1,15 @@
-I'm trying to get more, smaller releases out the door… so I'm back, and I bring with me a tiny collection of fixes and tweaks that I've put together since the last release.
+Hello everyone. I'd hoped to get this release out sooner, but somehow, life always has other plans.
 
-- After 2024.1 got out the door, I immediately noticed that I'd get a crash on a couple devices when doing a search because a change to how I was treating search queries was causing an Equatable and Hashable mismatch. This is why you don't write custom conformances to those protocols, kids!
+Good news, though… this one has some good stuff in it.
 
-- When cancelling a search, one expects that one can just go on living life. However, a bug was causing GIFwrapped to crash if the results hadn't come back yet, and that just wouldn't do. I fixed the issue where the section was being released unexpectedly, made sure things got cancelled appropriately, and now one can expect life to return to normal.
+- It's been a long, long, long, long, long time coming… but GIFwrapped now has its first set of Shortcuts integrations. I'm not sure I'm 100% happy with them just yet, but we'll see where they go from here.
 
-- It seems like there was some issues with the way the IAP validation was being done on macOS… it's just slightly different enough of a process that I had to rewrite some bits to get everything working as expected. That said, it should work properly now, just in time for me to rip it all out and replace it with some sweet, sweet StoreKit 2 code.
+- It only took me until 2025, and MARCH at that, but the copyright dates no longer read 2023. What even was 2024, and why have static strings for things like this in the first place?
 
-- A change I made to the 'Save to GIFwrapped' extension accidentally broke importing GIFs where the source application provides a file URL, like the Photos app. Thankfully, I got a lovely email from someone who set me straight, and now it's working as it should once more.
+- For whatever reason, Catalyst apps on macOS don't automatically remember the last active window's location or other aspects of the screen's state… which means that GIFwrapped would just re-open in the centre of the active screen each time you open it, annoying the heck out of anyone who has opinions about window placement. You know who you are. I joke, but I also put in a bunch of effort to remember the windows most recent location and sidebar width, and I'll probably add some more aspects to the mix in future updates, because I made it easy to do.
 
-That's it for this one! Small but meaningful. If you want to reach out, chuck an email towards support@gifwrapped.co, or hit me up at jellystyle.social/@gifwrapped if that's more your jam.
+- A release or two ago, I updated the mechanics of how I track file changes, and it seems like one of those changes caused changes that occur in the background to get… lost. Like with all lost things, I retraced my steps and somehow found it in the freezer. I've added a nice little workaround to ensure it checks for any changes on returning to the foreground, so we can all sleep a little better.
 
-Until next time, remember: don't be a turnip.
+As always, if you need to reach out and tell me about all the things that are going horribly wrong, please toss an email at support@gifwrapped.co. I do a terrible job at responding to emails, but I read them all, and try to address any issues that come up.
+
+Until next time, remember: you're not alone.
