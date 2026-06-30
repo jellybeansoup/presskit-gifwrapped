@@ -1,13 +1,15 @@
-Hello and welcome one and all to the second GIFwrapped release of 2026. It looks the same, but there's actually a bunch of cool stuff in this one, some of which you will hopefully never notice.
+Hello, everyone!
 
-• The Library's sorting feature got some love in this release, adding not just one, but two sweet new options. For starters, you can now sort by file size, but to make it even better, you can now reverse the sort order for whatever option you select. These were both requests from folks, and I figured, "Heck, if I can do one thing with sorting, I can do two." Just don't ask me to do three. Three is too much.
+Work continues on the Liquid Glass design, but Tenor’s API is going away at the end of the month, and so it is sadly time to remove the engine.
 
-• There have always been some weird inconsistencies in the image preview screen. Somehow, I've never been able to get the layout code exactly right for all the various permutations… until now. The latest version feels so good, you're gonna be scrolling in and out of the info panel on iPhone until you have sore thumbs.
+Since it was the default engine, this means updating that too, so Klipy has officially become the default. It does feel quite empty in that list, though, so I might need to figure out some new alternatives down the line.
 
-• I may have accidentally broken the Premium-only Search History list in Settings at some point, possibly because I was doing some untoward stuff to handle navigation and some version of iOS busted it. So it got a fashionable new rebuild (there's a bit of this going around in this release), and it's much much better.
+Plus a couple of bonus fixes:
 
-• The User Guide has been showing its age for a while, and especially given that I'm in the process of nice-ifying the app for an eventual liquid glass reskin. So I replaced the guide's UI with a much better, more modern version.
+• For whatever reason, the section headers in the About screen were a bit screwy, and one would randomly show at the bottom of the screen. A couple of people pointed it out recently, and it was an easy peasy thing to fix, so I jumped in and just did it.
 
-It may not seem like much, but some of this stuff has been on my todo list for a LONG time, so it feels good to get these improvements out there. If you have any requests, problems, or suggestions, please feel free to reach out to support@gifwrapped.co and I'll see what I can do.
+• The icon selection screen has been a little bit eager during scrolling for a while, if you happened to drag while touching an icon, it’d end up selecting that icon. Turns out the trick was to fix the gesture handling so it’d link up when being added to the window, and not just the parent view. Who knew?
 
-Until next time, remember: the man in the cupboard wears twice the hats.
+And that's literally it. This update is all about quality, and definitely not quantity. Or maybe a good time, not a long time. Whatever the case, if you need support, toss an email towards support@gifwrapped.co and I'll do my dangedest to sort things out.
+
+Until next time, remember: it's always OK to be who you are.
