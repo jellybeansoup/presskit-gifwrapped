@@ -1,15 +1,19 @@
-Hello, everyone!
+Okay, so it's here. GIFwrapped has (finally) been updated with Liquid Glass, and let me tell you… it's been A JOURNEY.
 
-Work continues on the Liquid Glass design, but Tenor’s API is going away at the end of the month, and so it is sadly time to remove the engine.
+- Liquid Glass. Hope you like it. I tried very hard to make it not garbage.
 
-Since it was the default engine, this means updating that too, so Klipy has officially become the default. It does feel quite empty in that list, though, so I might need to figure out some new alternatives down the line.
+- An all-new search sheet. Does it work the same? Yes. Is it the same? No. Was it the reason this update took almost a year? YES. Did I have to build it from scratch because the one in Apple's frameworks was too limiting for what I needed? UGH. YES.
 
-Plus a couple of bonus fixes:
+- For some reason, iOS 26 introduced a weird bug that caused the library's toolbar buttons to not appear on launch. Worse, I couldn't reliably reproduce it with any kind of debugging attached. Nevertheless, I managed to come up with a fix, so… you're welcome.
 
-• For whatever reason, the section headers in the About screen were a bit screwy, and one would randomly show at the bottom of the screen. A couple of people pointed it out recently, and it was an easy peasy thing to fix, so I jumped in and just did it.
+- Don't tell anyone, but I snuck in an update to the in-app icons in a few places, dynamically rounding their corners to match the system icon radius. It's the little things.
 
-• The icon selection screen has been a little bit eager during scrolling for a while, if you happened to drag while touching an icon, it’d end up selecting that icon. Turns out the trick was to fix the gesture handling so it’d link up when being added to the window, and not just the parent view. Who knew?
+- I love a typographic apostrophe as much as the next person, but I'll be honest: my usage throughout GIFwrapped has been a little… haphazard. Once it was pointed out to me, I couldn't let it stand. Here's hoping I got 'em all.
 
-And that's literally it. This update is all about quality, and definitely not quantity. Or maybe a good time, not a long time. Whatever the case, if you need support, toss an email towards support@gifwrapped.co and I'll do my dangedest to sort things out.
+- I took a hammer to a couple of potential causes of crashes and hangs. Absolutely no idea if I actually resolved them, but if you were experiencing them and aren't anymore… you're welcome, I guess?
 
-Until next time, remember: it's always OK to be who you are.
+These release notes don't truly communicate the amount of energy poured into GIFwrapped over the last few months. If you like it, it'd be lovely to get an email saying so! Or if you need assistance, I guess. Toss one at support@gifwrapped.co and I'll do my best to respond!
+
+Thank you all for enjoying GIFwrapped, and a double thank you to those who support the app with a GIFwrapped Premium sub. I wouldn't still be doing this if it weren't for all of you.
+
+Until next time, remember: on Wednesdays, we wear pink.
